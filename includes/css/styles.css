@@ -28,7 +28,7 @@ Updated: Jan 2018
 footer {
 	background: #333;
 	color: #eee;
-	font-size: 11px;
+	font-size: 12px;
 	padding: 20px;
 }
 
@@ -67,6 +67,10 @@ ul.unstyled {
 .navbar-brand {
 	padding: 13px 15px;
 }
+.navbar {
+	background: #333;
+	color: #eee;
+}
    
    
 /* --------------------------------------
@@ -98,7 +102,12 @@ ul.unstyled {
 #slide3 {
 	background: url('../../includes/carousel_medium_03.jpg') top center no-repeat;
 }
-
+/* --------------------------------------
+   Component Styles
+   -------------------------------------- */
+.jumbotron{
+	background: #393838;
+}
 
 /* --------------------------------------
    Global Styles
