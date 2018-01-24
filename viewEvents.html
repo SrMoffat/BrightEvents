@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+
+<html>
+	<head>
+        <title> Bright Events | User Events </title>
+
+        <!-- Mobile viewport optimized -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<!-- Bootstrap CSS -->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="includes/css/bootstrap-glyphicons.css" rel="stylesheet">
+		
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="includes/css/styles.css">
+		
+		<!-- Included the Modernizr in the head before any other Javascript to ensure compatibility with most browsers -->
+        <script src="includes/js/modernizr-2.6.2.min.js"></script>
+
+        
+        
+		<style>
+			
+
+			body {
+			background-image: url(includes/one.jpg);
+			
+			}
+	
+		</style>
+		
+	</head>
+	<body>
+
+	
+		<div class="container" id="main">
+		
+			<div class="navbar navbar-fixed-top">
+				<div class="container">
+                    
+                    <!-- .btn-navbar is used as the toggle for collapsed navbar content for mobile responsiveness -->
+					<button class="navbar-toggle" data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+												
+						<a class="navbar-brand" href="/"><img src="includes/logo.png" alt="Bright Events"></a>
+										
+						<ul class="nav navbar-nav">
+							<li class="active">
+								<a href="#">Home</a>
+                            </li>
+
+                            
+
+							
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white">Filters<strong class="caret"></strong></a>
+								
+								<ul class="dropdown-menu">
+									<li>
+                                        <a href="">Category</a>
+                                    </li>
+                                    
+									<li>
+										<a href="#">Location</a>
+									</li>								
+									
+								</ul><!-- end dropdown-menu -->
+							</li>
+						</ul>
+						
+						<form class="navbar-form pull-left">
+							<input type="text" class="form-control" placeholder="Search Events..." id="searchInput">
+							<button type="submit" class="btn btn-default" style="background:white"><span style= "color:black" class="glyphicon glyphicon-search"></span></button>
+						</form><!-- end navbar-form -->
+						
+											
+						<ul class="nav navbar-nav pull-right">
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" style= "color:white"><span class="glyphicon glyphicon-user"></span> My Account<strong class="caret"></strong></a>
+								
+								<ul class="dropdown-menu">
+									
+									<li>
+										<a href="#"><span class="glyphicon glyphicon-refresh"></span> Update Profile</a>
+									</li>
+														
+									<li>
+										<a href="#"><span class="glyphicon glyphicon-cog"></span> Settings</a>
+									</li>
+									
+									<li class="divider"></li>
+									
+									<li>
+										<a href="/"><span class="glyphicon glyphicon-off"></span> Log Out</a>
+									</li>
+																										
+								</ul>
+							</li>
+						</ul><!-- end nav pull-right -->
+					</div><!-- end nav-collapse -->
+				
+				</div><!-- end container -->
+			</div><!-- end navbar -->
+
+			<div class="container" style="margin-top:60px;">
+			
+					<div class="well">
+				
+						<div class="page-header">
+							<h1>Welcome SrMoffat,</h1>
+						</div><!-- end page-header -->
+					
+						<div>
+					
+							<img src="includes/avatar.png" class="thumbnail pull-left" alt="User Avatar">
+					
+						</div>
+						<br>
+						
+						<p style="padding-left: 180px"><span class="glyphicon glyphicon-user"></span><b> User Name:</b> SrMoffat</p> 
+						<p style="padding-left: 180px"><span class="glyphicon glyphicon-briefcase"></span><b> My Events:</b> (0)</p>
+						<p style="padding-left: 180px"><span class="glyphicon glyphicon-file"></span><b> Current RSVPs: </b> (0)</p>
+						
+						<a style="margin-left: 30px" href="" class="btn btn-small btn-primary" id="alertMe"><span class="glyphicon glyphicon-edit"></span> Edit Profile</a>
+						<a href="" class="btn btn-small btn-default"><span class = "glyphicon glyphicon-home"> Dashboard </span></a>
+					
+					</div><!-- end well -->
+                </div><!--end container-->
+                
+                <br>
+
+                <div class="container">
+                        <div class="container col-sm-2"></div>
+                            <div class="container col-sm-8">
+                        
+                                <div class="panel-group">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                          <h4 class="panel-title">
+                                            <p data-toggle="collapse" href="#collapse1"><b>SrMoffat's Events</b> <small style="font-size: 9pt"> Click to View</small></p>
+                                          </h4>
+                                        </div>
+                                        <div id="collapse1" class="panel-collapse collapse">
+                                            <div class="list-group" id="listGroup">
+
+                                                    <a href="#1" class="list-group-item list-group-item-action">
+                                                        <h4 class="list-group-item-heading"> <b>forLoop</b></h4>
+                                                        <p class="list-group-item-text"><b>Category : </b> Conference</p>
+                                                        <p class="list-group-item-text"><b>Date: </b> 22/02/2018</p>
+                                                        <p class="list-group-item-text"><b>Location: </b> Nairobi</p>
+                                                        <p class="list-group-item-text"><b>RSVPs: </b> (1200)</p>                                                        
+                                                    </a>
+
+                                                    <a href="#2" class="list-group-item list-group-item-action">
+                                                        <h4 class="list-group-item-heading"> <b>Dunda Fest</b></h4>
+                                                        <p class="list-group-item-text"><b>Category : </b> Outdoor</p>
+                                                        <p class="list-group-item-text"><b>Date: </b> 22/02/2018</p>
+                                                        <p class="list-group-item-text"><b>Location: </b> Nairobi</p>
+                                                        <p class="list-group-item-text"><b>RSVPs: </b> (10)</p>                                                        
+                                                    </a>
+
+                                                    <a href="#3" class="list-group-item list-group-item-action">
+                                                        <h4 class="list-group-item-heading"> <b>PyCon</b></h4>
+                                                        <p class="list-group-item-text"><b>Category : </b> Conference</p>
+                                                        <p class="list-group-item-text"><b>Date: </b> 22/02/2018</p>
+                                                        <p class="list-group-item-text"><b>Location: </b> Kisumu</p>
+                                                        <p class="list-group-item-text"><b>RSVPs: </b> (12)</p>                                                        
+                                                    </a>
+
+                                                    <a href="#4" class="list-group-item list-group-item-action">
+                                                        <h4 class="list-group-item-heading"> <b>Graduation Party</b></h4>
+                                                        <p class="list-group-item-text"><b>Category : </b> Private</p>
+                                                        <p class="list-group-item-text"><b>Date: </b> 22/02/2018</p>
+                                                        <p class="list-group-item-text"><b>Location: </b> Nairobi</p>
+                                                        <p class="list-group-item-text"><b>RSVPs: </b> (12)</p>                                                        
+                                                    </a>
+                                            </div>
+                                            
+                                            <div class="container panel-footer">
+                                            <a href="#myModal" role="button" class="btn btn-success" data-toggle="modal"><span class="glyphicon glyphicon-plus"></span> <b>Create Event</b></a>
+                                            <div class="modal fade" id="myModal">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button class="close" data-dismiss="modal">&times;</button>
+                                                                
+                                                                <h4 style = "text-align: center" class="modal-title"><b>Create Event</b></h4>
+                                                            </div><!-- end modal-header -->
+                                                            <div class="modal-body">
+                                                                <h4><small>Add New Event </small></h4>                                      
+                                                                    
+                                                                    <form>
+                                                                        <div class="form-row">
+                                                                            <div class="form-group col-md-3">
+                                                                                <label for="eventName">Event Name</label>
+                                                                                <input type="text" class="form-control" id="eventName" placeholder="Event Name">
+                                                                            </div><!--end form-group-->
+                                                                    
+                                                                            <div class="form-group col-md-3">
+                                                                                <label for="eventLocation">Event Location</label>
+                                                                                <input type="text" class="form-control" id="eventLocation" placeholder="Event Location">
+                                                                            </div><!--end form-group-->
+                                                                    
+                                                                            <div class="form-group col-md-3">
+                                                                                <label for="inputCategory">Event Category</label>
+                                                                                <select id="inputCategory" class="form-control">
+                                                                                <option selected>Outdoor</option>
+                                                                                <option>Black Tie</option>
+                                                                                <option>Conference</option>
+                                                                                <option>Concert</option>
+                                                                                <option>Private</option>
+                                                                                </select>
+                                                                            </div><!--end form-group-->                                                    
+                                                                           
+                                                                            <!--Remember to do the datetime properly-->
+                                                                            <div class='form-group col-md-3'>
+                                                                                <label for="inputDate">Event Date</label>
+                                                                                <div class='input-group date' id='datetimepicker1'>
+                                                                                    <input type='text' class="form-control" placeholder="DD/MM/YYYY">
+                                                                                    <span class="input-group-addon">
+                                                                                        <span class="glyphicon glyphicon-calendar"></span>
+                                                                                    </span>                                                            
+                                                                                </div>
+                                                                            </div>
+                                                                        </div><!--end form-row-->
+                                                                    </form><!--end form-->										
+                                                            </div><!-- end modal-body -->
+                                                            <div class="modal-footer">
+                                                                <button class="btn btn-success pull-right" type="submit"><span class="glyphicon glyphicon-plus"></span> Add Event</button>
+                                                                <button class="btn btn-danger pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>                                      
+                                                            </div><!--end modal-footer-->
+                                                        </div><!-- end modal-content -->
+                                                    </div><!-- end modal-dialog -->
+                                            </div><!-- end myModal -->                       
+                                              
+                                        </div><!--panel-footer-->
+                                        </div><!--panel-collapse-->
+                                    </div><!--panel-default-->
+                                </div><!--panel-group-->
+                            </div>
+                        </div>
+                <hr>
+                                             
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <h6>Copyright &copy; 2018 Bright Events</h6>
+                        </div><!-- end col-sm-2 -->
+                        
+                        <div class="col-sm-4">
+                            <h6>About Us</h6>
+                            <p>Bright events provides a platform for event organizers to create and manage different types of events while making them easily accessible to target markets.It is very easy to create an account, log in, create, view, update, and delete your events!!
+                                    
+    </p>
+                        </div><!-- end col-sm-4 -->
+                        
+                        <div class="col-sm-2">
+                            <h6>Navigation</h6>
+                            <ul class="unstyled">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                        </div><!-- end col-sm-2 -->
+                        
+                        <div class="col-sm-2">
+                            <h6>Follow Us</h6>
+                            <ul class="unstyled">
+                                <li><a href="https://github.com/SrMoffat/BootCamp/compare/Develop?expand=1">Github</a></li>
+                                <li><a href="https://open-andela.slack.com/messages/C6UF7MHUL/convo/D6WQV46CB-1504251975.000286/">Slack</a></li>
+                                <li><a href="https://plus.google.com/u/0/111241893140835231883">Google Plus</a></li>
+                            </ul>
+                        </div><!-- end col-sm-2 -->
+                        
+                        <div class="col-sm-2">
+                            <h6>With <span style="color: red" class="glyphicon glyphicon-heart"></span> 4fr0c0d3</h6>
+                        </div><!-- end col-sm-2 -->
+                    </div><!-- end row -->
+                </div><!-- end container -->
+            </footer>
+        
+       
+    
+        <!-- Locatated all Javascript at the bottom of the page for faster page loading -->
+            
+        <!-- The Online version of jQuery-->
+        <script src="http://code.jquery.com/jquery.js"></script>
+        
+        <!-- Fall back jQuery in case online verion unavailable downloaded hardcoded by third-part -->
+        <script>window.jQuery || document.write('<script src="includes/js/jquery-1.8.2.min.js"><\/script>')</script>
+        
+        <!-- javascript files from bootstrap -->
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        
+        <!-- customized javascript files from tutorials -->
+        <script src="includes/js/script.js"></script>
+        
+        </body>
+    </html>
+    
+    
