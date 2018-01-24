@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+
+<html>
+	<head>
+        <title> Bright Events | Profile </title>
+
+        <!-- Mobile viewport optimized -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<!-- Bootstrap CSS -->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="includes/css/bootstrap-glyphicons.css" rel="stylesheet">
+		
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="includes/css/styles.css">
+		
+		<!-- Included the Modernizr in the head before any other Javascript to ensure compatibility with most browsers -->
+        <script src="includes/js/modernizr-2.6.2.min.js"></script>
+
+        
+        
+		<style>
+			
+
+			body {
+			background-image: url(includes/one.jpg);
+			
+			}
+	
+		</style>
+		
+	</head>
+	<body>
+
+	
+		<div class="container" id="main">
+		
+			<div class="navbar navbar-fixed-top">
+				<div class="container">
+                    
+                    <!-- .btn-navbar is used as the toggle for collapsed navbar content for mobile responsiveness -->
+					<button class="navbar-toggle" data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+												
+						<a class="navbar-brand" href="/"><img src="includes/logo.png" alt="Bright Events"></a>
+										
+						<ul class="nav navbar-nav">
+							<li class="active">
+								<a href="#">Home</a>
+							</li>
+							
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white">Features<strong class="caret"></strong></a>
+								
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#myModal" data-toggle="modal">Create Event</a>
+                                    </li>
+                                    
+									<li>
+										<a href="#" data-toggle="modal">View Events</a>
+									</li>
+									
+									<li>
+										<a href="#">RSVP Events</a>
+									</li>
+									
+									<li class="divider"></li>
+									
+									<li class="dropdown-header">Extra Features</li>
+									
+									<li>
+										<a href="#">Delete Event</a>
+									</li>
+									
+									<li>
+										<a href="#">Share Events (Coming Soon)</a>
+									</li>
+								</ul><!-- end dropdown-menu -->
+							</li>
+						</ul>
+						
+						<form class="navbar-form pull-left">
+							<input type="text" class="form-control" placeholder="Search Events..." id="searchInput">
+							<button type="submit" class="btn btn-default" style="background:white"><span style= "color:black" class="glyphicon glyphicon-search"></span></button>
+						</form><!-- end navbar-form -->
+						
+											
+						<ul class="nav navbar-nav pull-right">
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" style= "color:white"><span class="glyphicon glyphicon-user"></span> My Account<strong class="caret"></strong></a>
+								
+								<ul class="dropdown-menu">
+									
+									<li>
+										<a href="#"><span class="glyphicon glyphicon-home"></span> Dashboard</a>
+									</li>
+										
+									<li>
+										<a href="/"><span class="glyphicon glyphicon-off"></span> Log Out</a>
+									</li>
+																										
+								</ul>
+							</li>
+						</ul><!-- end nav pull-right -->
+					</div><!-- end nav-collapse -->
+				
+				</div><!-- end container -->
+			</div><!-- end navbar -->
+
+			<div class="container" style="margin-top:60px;">
+			
+					<div class="well">
+				
+						<div class="page-header">
+                            <h1>Edit Profile</h1>
+                        </div><!-- end page-header -->
+                        
+						<div class="row">
+                            <div class="col-lg-6">
+                                <div>
+                                    <a href="" class="btn btn-small btn-default pull-left"><span class="glyphicon glyphicon-home"></span> Dashboard</a>
+                                </div>
+                                
+                                <img src="includes/avatar.png" class="thumbnail pull-left" alt="User Avatar" style ="margin-top: 30px; margin-left: 85px">
+                                <form style="padding-top: 190px; padding-left:180px">
+                                    <div class="form-group">
+                                        <label for="uploadAvatar">Upload New Avatar</label>
+                                        <input type="file" class="form-control-file" id="avatarUpload">
+                                    </div>
+                                </form>
+                            </div><!--end col-lg-6-->
+
+                            <div class="col-lg-6">  
+                                <div class="container">
+                                    <form class="form-horizontal" method="POST" action="">
+                                                
+                                        <div class="form-group">
+                                            <div class="col-lg-6">
+                                                <label for="oldPass">Old Password</label>
+                                                <input name="oldPass" class="form-control" id="oldPassword" type="password">
+                                            </div><!--end col-lg-12-->
+                                        </div><!--end formgroup-->
+
+                                        <div class="form-group">
+                                            <div class="col-lg-6">
+                                                <label for="newPass">New Password</label>
+                                                <input name="newPass" class="form-control" id="newPassword" type="password">
+                                            </div><!--end col-lg-12-->
+                                        </div><!--end formgroup-->
+                                        
+                                        <div class="form-group">
+                                            <div class="col-lg-6">
+                                                <label for="conNewPass">Confirm Password</label>
+                                                <input name="conNewPass" class="form-control" id="conNewPassword" type="password">
+                                            </div><!--end col-lg-12-->
+                                        </div><!--end formgroup-->                                   
+                                        
+                                    </form><!--end horizontal form--> 
+                                    <button type="submit" class="btn btn-success"> Save Changes </button> 
+                                </div><!--end container-->                                
+                                            
+                            </div><!--end col-lg-6-->
+					
+						</div><!--end container row-->
+						<br>
+					</div><!-- end well -->
+                </div><!--end container-->
+                
+            <br>
+			<hr>
+			
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<h6>Copyright &copy; 2018 Bright Events</h6>
+					</div><!-- end col-sm-2 -->
+					
+					<div class="col-sm-4">
+						<h6>About Us</h6>
+						<p>Bright events provides a platform for event organizers to create and manage different types of events while making them easily accessible to target markets.It is very easy to create an account, log in, create, view, update, and delete your events!!
+                                
+</p>
+					</div><!-- end col-sm-4 -->
+					
+					<div class="col-sm-2">
+						<h6>Navigation</h6>
+						<ul class="unstyled">
+							<li><a href="#">Home</a></li>
+							<li><a href="#">Services</a></li>
+							<li><a href="#">Contact Us</a></li>
+						</ul>
+					</div><!-- end col-sm-2 -->
+					
+					<div class="col-sm-2">
+						<h6>Follow Us</h6>
+						<ul class="unstyled">
+							<li><a href="https://github.com/SrMoffat/BootCamp/compare/Develop?expand=1">Github</a></li>
+							<li><a href="https://open-andela.slack.com/messages/C6UF7MHUL/convo/D6WQV46CB-1504251975.000286/">Slack</a></li>
+							<li><a href="https://plus.google.com/u/0/111241893140835231883">Google Plus</a></li>
+						</ul>
+					</div><!-- end col-sm-2 -->
+					
+					<div class="col-sm-2">
+						<h6>With <span style="color: red" class="glyphicon glyphicon-heart"></span> 4fr0c0d3</h6>
+					</div><!-- end col-sm-2 -->
+				</div><!-- end row -->
+			</div><!-- end container -->
+		</footer>
+	
+
+	<!-- Locatated all Javascript at the bottom of the page for faster page loading -->
+		
+	<!-- The Online version of jQuery-->
+	<script src="http://code.jquery.com/jquery.js"></script>
+	
+	<!-- Fall back jQuery in case online verion unavailable downloaded hardcoded by third-part -->
+	<script>window.jQuery || document.write('<script src="includes/js/jquery-1.8.2.min.js"><\/script>')</script>
+	
+	<!-- javascript files from bootstrap -->
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	
+	<!-- customized javascript files from tutorials -->
+	<script src="includes/js/script.js"></script>
+	
+	</body>
+</html>
+
