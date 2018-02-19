@@ -9,14 +9,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		
 		<!-- Bootstrap CSS -->
-		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<link href="includes/css/bootstrap-glyphicons.css" rel="stylesheet">
+		<link href="{{ url_for ('static' , filename = 'bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+		<link href="../static/includes/css/bootstrap-glyphicons.css" rel="stylesheet">
 		
 		<!-- Custom CSS -->
-		<link rel="stylesheet" href="includes/css/styles.css">
+		<link rel="stylesheet" href="{{ url_for ('static' , filename = 'includes/css/styles.css') }}">
 		
 		<!-- Included the Modernizr in the head before any other Javascript to ensure compatibility with most browsers -->
-		<script src="includes/js/modernizr-2.6.2.min.js"></script>
+		<script src="{{ url_for ('static' , filename = 'includes/js/modernizr-2.6.2.min.js') }}"></script>
 		
 	</head>
 	<body>
@@ -33,13 +33,12 @@
 						<span class="icon-bar"></span>
                     </button>
 
-                    
-					<a class="navbar-brand" href="/"><img src="includes/logo.png" alt="BrightEvents"></a>
+					<a class="navbar-brand" href="/"><img src="{{ url_for('static' , filename= 'images/logo.png') }}" alt="BrightEvents"></a>
 					
 					<div class="nav-collapse collapse navbar-responsive-collapse">
 						<ul class="nav navbar-nav">
 							<li class="active">
-								<a href="#">Home</a>
+								<a href="/">Home</a>
 							</li>
 							
 							<li class="dropdown">
@@ -47,15 +46,15 @@
 								
 								<ul class="dropdown-menu">
 									<li>
-										<a href="#">Create Events</a>
+										<a href="{{ url_for('signin') }}">Create Events</a>
 									</li>
 									
 									<li>
-										<a href="#">View Events</a>
+										<a href="{{ url_for('signin') }}">View Events</a>
 									</li>
 									
 									<li>
-										<a href="#">Update Events</a>
+										<a href="{{ url_for('signin') }}">Update Events</a>
 									</li>
 									
 									<li class="divider"></li>
@@ -63,11 +62,11 @@
 									<li class="dropdown-header">More Features</li>
 									
 									<li>
-										<a href="#">RSVP Feature</a>
+										<a href="{{ url_for('signin') }}">RSVP Feature</a>
 									</li>
 									
 									<li>
-										<a href="#">Share Events (Coming Soon)</a>
+										<a href="{{ url_for('signin') }}">Share Events (Coming Soon)</a>
 									</li>
 								</ul><!-- end dropdown-menu -->
 							</li>
@@ -79,11 +78,11 @@
 								
 								<ul class="dropdown-menu">
 									<li>
-										<a href="#"><span class="glyphicon glyphicon-pencil"></span> Register</a>
+										<a href="{{ url_for('register') }}"><span class="glyphicon glyphicon-pencil"></span> Register</a>
 									</li>
 									
 									<li>
-										<a href="#"><span class="glyphicon glyphicon-off"></span> Log In</a>
+										<a href="{{ url_for('signin') }}"><span class="glyphicon glyphicon-off"></span> Log In</a>
 									</li>
 								
 								</ul>
@@ -150,8 +149,8 @@
 						
 						<p class="lead" style="font-size: 20px">Bright events provides a platform for event organizers to create and manage different types of events while making them easily accessible to target markets.</p>
 						
-						<a href="" class="btn btn-medium btn-default">Register Now !</a>
-						<a href="" class="btn btn-medium btn-link"> Sign In</a>
+						<a href="{{ url_for('register') }}" class="btn btn-medium btn-default">Register Now !</a>
+						<a href="{{ url_for('signin') }}" class="btn btn-medium btn-link"> Sign In</a>
 					</div><!-- end well -->
 					
 				</div><!-- end col-12 -->
@@ -209,10 +208,10 @@
 	<script>window.jQuery || document.write('<script src="includes/js/jquery-1.8.2.min.js"><\/script>')</script>
 	
 	<!-- Bootstrap JS -->
-	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="{{ url_for('static' , filename = 'bootstrap/js/bootstrap.min.js') }}"></script>
 	
 	<!-- Custom JS -->
-	<script src="includes/js/script.js"></script>
+	<script src="{{ url_for('static' , filename = 'includes/js/script.js') }}"></script>
 	
 	</body>
 </html>

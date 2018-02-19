@@ -92,15 +92,15 @@ ul.unstyled {
 #myCarousel .item { height: 400px; }
 
 #slide1 {
-	background: url('../../includes/carousel_medium_01.jpg') top center no-repeat;
+	background: url('../../images/carousel_medium_01.jpg') top center no-repeat;
 }
 
 #slide2 {
-	background: url('../../includes/carousel_medium_02.jpg') top center no-repeat;
+	background: url('../../images/carousel_medium_02.jpg') top center no-repeat;
 }
 
 #slide3 {
-	background: url('../../includes/carousel_medium_03.jpg') top center no-repeat;
+	background: url('../../images/carousel_medium_03.jpg') top center no-repeat;
 }
 /* --------------------------------------
    Component Styles
@@ -181,15 +181,15 @@ ul.unstyled {
 	#myCarousel .item { height: 310px; }
 	
 	#slide1 {
-		background: url('../../includes/carousel_small_01.jpg') top center no-repeat;
+		background: url('../../images/carousel_small_01.jpg') top center no-repeat;
 	}
 	
 	#slide2 {
-		background: url('../../includes/carousel_small_02.jpg') top center no-repeat;
+		background: url('../../images/carousel_small_02.jpg') top center no-repeat;
 	}
 	
 	#slide3 {
-		background: url('../../includes/carousel_small_03.jpg') top center no-repeat;
+		background: url('../../images/carousel_small_03.jpg') top center no-repeat;
 	}
 	
 	.carousel-caption {
@@ -208,15 +208,15 @@ ul.unstyled {
 	#myCarousel .item { height: 500px; }
 	
 	#slide1 {
-		background: url('../../includes/carousel_large_01.jpg') top center no-repeat;
+		background: url('../../images/carousel_large_01.jpg') top center no-repeat;
 	}
 	
 	#slide2 {
-		background: url('../../includes/carousel_large_02.jpg') top center no-repeat;
+		background: url('../../images/carousel_large_02.jpg') top center no-repeat;
 	}
 	
 	#slide3 {
-		background: url('../../includes/carousel_large_03.jpg') top center no-repeat;
+		background: url('../../images/carousel_large_03.jpg') top center no-repeat;
 	}
 
 }

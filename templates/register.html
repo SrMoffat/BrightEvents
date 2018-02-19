@@ -10,14 +10,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		
 		<!-- Bootstrap CSS -->
-		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<link href="includes/css/bootstrap-glyphicons.css" rel="stylesheet">
+		<link href="{{ url_for ('static' , filename = 'bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+		<link href="../static/includes/css/bootstrap-glyphicons.css" rel="stylesheet">
 		
 		<!-- Custom CSS -->
-		<link rel="stylesheet" href="includes/css/styles.css">
+		<link rel="stylesheet" href="{{ url_for ('static' , filename = 'includes/css/styles.css') }}">
 		
 		<!-- Included the Modernizr in the head before any other Javascript to ensure compatibility with most browsers -->
-		<script src="includes/js/modernizr-2.6.2.min.js"></script>
+		<script src="{{ url_for ('static' , filename = 'includes/js/modernizr-2.6.2.min.js') }}"></script>
 		
 	</head>
 	<body>
@@ -34,12 +34,12 @@
 						<span class="icon-bar"></span>
                     </button>
 					
-					<a class="navbar-brand" href="/"><img src="includes/logo.png" alt="BrightEvents"></a>
+					<a class="navbar-brand" href="/"><img src="{{ url_for('static' , filename= 'images/logo.png') }}" alt="BrightEvents"></a>
 					
 					<div class="nav-collapse collapse navbar-responsive-collapse">
 						<ul class="nav navbar-nav">
 							<li class="active">
-								<a href="#">Home</a>
+								<a href="/">Home</a>
 							</li>
 							
 							<li class="dropdown">
@@ -80,7 +80,7 @@
 								<ul class="dropdown-menu">
 
                                     <li>
-										<a href="#"><span class="glyphicon glyphicon-off"></span> Log In</a>
+										<a href="{{ url_for('signin') }}"><span class="glyphicon glyphicon-off"></span> Log In</a>
 									</li>
 								
 								</ul>
@@ -93,40 +93,52 @@
 			
 			
 			<div class="container">
+				
+					{% block flash_messages %}
+					
+						{% if messages %}
+							{% for message in messages %}
+								<div class="alert alert-danger text-center" ><b>{{ message|safe }}</b></div>
+							{% endfor %}
+						{% endif %}
+					
+					{% endblock %}
+				
+				
 				<div class="col-lg-4"></div>
 					<div class="col-lg-4">
 						<div class="jumbotron" style="margin-top:90px; color:white">
 							<h3 style="text-align:center"> Please Sign Up</h3>
 								<p style="text-align:center; font-size: 10pt"><small class="text-muted">Kindly fill the details below to register</small></p>
 
-							<form class="form-horizontal" method="POST" action="">
+							<form id = "registerForm" class="form-horizontal" method="POST" action="/register" role="form" >
 							
 								<div class="form-group">
 									<div class="col-lg-12">
-										<input name="username" class="form-control" id="inputName" placeholder="Enter Name" type="text">
+										<input name="username" class="form-control" id="inputName" placeholder="Enter Name" type="text"required>
 									</div><!--end col-lg-12-->
 								</div><!--end formgroup-->
 
 								<div class="form-group">
 									<div class="col-lg-12">
-										<input name="email" class="form-control" id="inputEmail" placeholder="Enter Email" type="email">
+										<input name="email" class="form-control" id="inputEmail" placeholder="Enter Email" type="email"required>
 									</div><!--end col-lg-10-->
 								</div><!--end formgroup-->
 
 								<div class="form-group">
 									<div class="col-lg-12">
-										<input name="password" class="form-control" id="inputPass" placeholder="Password" type="password">
+										<input name="password" class="form-control" id="inputPass" placeholder="Password" type="password"required>
 									</div>
 									<!--end col-lg-10-->
 								</div><!--end formgroup-->
 
 								<div class="form-group">
 									<div class="col-lg-12">
-										<input name="cpassword" class="form-control" id="confPass" placeholder="Confirm Password" type="password">
+										<input name="cpassword" class="form-control" id="confPass" placeholder="Confirm Password" type="password"required>
 									</div><!--end col-lg-10-->
 								</div><!--end formgroup-->
 
-								<button type="submit" class="btn btn-success pull-right"> Sign Up </button>
+								<button name="registerButton" id="registerButton" type="submit" class="btn btn-success pull-right"> Sign Up </button>
 							</form><!--end horizontal form-->
 						</div><!--end jumbotron-->
 					</div><!--end col-lg-4-->
@@ -185,10 +197,10 @@
 <script>window.jQuery || document.write('<script src="includes/js/jquery-1.8.2.min.js"><\/script>')</script>
 
 <!-- Bootstrap JS -->
-<script src="bootstrap/js/bootstrap.min.js"></script>
-
+<script src="{{ url_for('static' , filename = 'bootstrap/js/bootstrap.min.js') }}"></script>
+	
 <!-- Custom JS -->
-<script src="includes/js/script.js"></script>
+<script src="{{ url_for('static' , filename = 'includes/js/script.js') }}"></script>
 
 </body>
 </html>

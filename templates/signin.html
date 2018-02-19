@@ -10,14 +10,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		
 		<!-- Bootstrap CSS -->
-		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<link href="includes/css/bootstrap-glyphicons.css" rel="stylesheet">
+		<link href="{{ url_for ('static' , filename = 'bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+		<link href="../static/includes/css/bootstrap-glyphicons.css" rel="stylesheet">
 		
 		<!-- Custom CSS -->
-		<link rel="stylesheet" href="includes/css/styles.css">
+		<link rel="stylesheet" href="{{ url_for ('static' , filename = 'includes/css/styles.css') }}">
 		
 		<!-- Included the Modernizr in the head before any other Javascript to ensure compatibility with most browsers -->
-		<script src="includes/js/modernizr-2.6.2.min.js"></script>
+		<script src="{{ url_for ('static' , filename = 'includes/js/modernizr-2.6.2.min.js') }}"></script>
 		
 	</head>
 	<body>
@@ -34,12 +34,12 @@
 						<span class="icon-bar"></span>
                     </button>
 					
-					<a class="navbar-brand" href="/"><img src="includes/logo.png" alt="BrightEvents"></a>
+					<a class="navbar-brand" href="/"><img src="{{ url_for('static' , filename= 'images/logo.png') }}" alt="BrightEvents"></a>
 					
 					<div class="nav-collapse collapse navbar-responsive-collapse">
 						<ul class="nav navbar-nav">
 							<li class="active">
-								<a href="#">Home</a>
+								<a href="/">Home</a>
 							</li>
 						</ul>
 					</div><!-- end nav-collapse -->
@@ -71,6 +71,7 @@
                                 </div><!--end formgroup-->
                                 
 								<button type="submit" class="btn btn-success pull-right"> Log In </button>
+								<a href="{{ url_for('register') }}" class="btn btn-medium btn-link pull-left" style="font-size: 12px"> Register here</a>
 							</form><!--end horizontal form-->
 						</div><!--end jumbotron-->
 					</div><!--end col-lg-4-->
@@ -130,10 +131,10 @@
 <script>window.jQuery || document.write('<script src="includes/js/jquery-1.8.2.min.js"><\/script>')</script>
 
 <!-- Bootstrap JS -->
-<script src="bootstrap/js/bootstrap.min.js"></script>
-
+	<script src="../static/bootstrap/js/bootstrap.min.js"></script>
+	
 <!-- Custom JS -->
-<script src="includes/js/script.js"></script>
+<script src="../static/includes/js/script.js"></script>
 
 </body>
 </html>

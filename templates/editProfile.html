@@ -9,14 +9,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		
 		<!-- Bootstrap CSS -->
-		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<link href="includes/css/bootstrap-glyphicons.css" rel="stylesheet">
+		<link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../static/includes/css/bootstrap-glyphicons.css" rel="stylesheet">
 		
 		<!-- Custom CSS -->
-		<link rel="stylesheet" href="includes/css/styles.css">
+		<link rel="stylesheet" href="../static/includes/css/styles.css">
 		
 		<!-- Included the Modernizr in the head before any other Javascript to ensure compatibility with most browsers -->
-        <script src="includes/js/modernizr-2.6.2.min.js"></script>
+		<script src="../static/includes/js/modernizr-2.6.2.min.js"></script>
 
         
         
@@ -24,7 +24,7 @@
 			
 
 			body {
-			background-image: url(includes/one.jpg);
+			background-image: url(../static/images/one.jpg);
 			
 			}
 	
@@ -46,40 +46,26 @@
                         <span class="icon-bar"></span>
                     </button>
 												
-						<a class="navbar-brand" href="/"><img src="includes/logo.png" alt="Bright Events"></a>
+						<a class="navbar-brand" href="/"><img src="../static/images/logo.png" alt="Bright Events"></a>
 										
 						<ul class="nav navbar-nav">
 							<li class="active">
-								<a href="#">Home</a>
+								<a href="/">Home</a>
 							</li>
 							
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white">Features<strong class="caret"></strong></a>
 								
 								<ul class="dropdown-menu">
+								
 									<li>
 										<a href="#myModal" data-toggle="modal">Create Event</a>
                                     </li>
                                     
 									<li>
-										<a href="#" data-toggle="modal">View Events</a>
+										<a href="/Users/Aleki/Desktop/BrightEvents/app/templates/viewEvents.html" data-toggle="modal">View Events</a>
 									</li>
-									
-									<li>
-										<a href="#">RSVP Events</a>
-									</li>
-									
-									<li class="divider"></li>
-									
-									<li class="dropdown-header">Extra Features</li>
-									
-									<li>
-										<a href="#">Delete Event</a>
-									</li>
-									
-									<li>
-										<a href="#">Share Events (Coming Soon)</a>
-									</li>
+								
 								</ul><!-- end dropdown-menu -->
 							</li>
 						</ul>
@@ -97,7 +83,7 @@
 								<ul class="dropdown-menu">
 									
 									<li>
-										<a href="#"><span class="glyphicon glyphicon-home"></span> Dashboard</a>
+										<a href="/Users/Aleki/Desktop/BrightEvents/app/templates/dashboard.html"><span class="glyphicon glyphicon-home"></span> Dashboard</a>
 									</li>
 										
 									<li>
@@ -123,10 +109,10 @@
 						<div class="row">
                             <div class="col-lg-6">
                                 <div>
-                                    <a href="" class="btn btn-small btn-default pull-left"><span class="glyphicon glyphicon-home"></span> Dashboard</a>
+                                    <a href="/Users/Aleki/Desktop/BrightEvents/app/templates/dashboard.html" class="btn btn-small btn-default pull-left"><span class="glyphicon glyphicon-home"></span> Dashboard</a>
                                 </div>
                                 
-                                <img src="includes/avatar.png" class="thumbnail pull-left" alt="User Avatar" style ="margin-top: 30px; margin-left: 85px">
+                                <img src="../static/images/avatar.png" class="thumbnail pull-left" alt="User Avatar" style ="margin-top: 30px; margin-left: 85px">
                                 <form style="padding-top: 190px; padding-left:180px">
                                     <div class="form-group">
                                         <label for="uploadAvatar">Upload New Avatar</label>
@@ -170,7 +156,63 @@
 						<br>
 					</div><!-- end well -->
                 </div><!--end container-->
-                
+				
+				<!--Modal Windows-->
+				<div class="modal fade" id="myModal">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button class="close" data-dismiss="modal">&times;</button>
+										
+										<h4 style = "text-align: center" class="modal-title"><b>Create Event</b></h4>
+									</div><!-- end modal-header -->
+									<div class="modal-body">
+                                        <h4><small>Add New Event </small></h4>                                      
+                                            
+                                            <form>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-3">
+                                                        <label for="eventName">Event Name</label>
+                                                        <input type="text" class="form-control" id="eventName" placeholder="Event Name">
+                                                    </div><!--end form-group-->
+                                            
+                                                    <div class="form-group col-md-3">
+                                                        <label for="eventLocation">Event Location</label>
+                                                        <input type="text" class="form-control" id="eventLocation" placeholder="Event Location">
+                                                    </div><!--end form-group-->
+                                            
+                                                    <div class="form-group col-md-3">
+                                                        <label for="inputCategory">Event Category</label>
+                                                        <select id="inputCategory" class="form-control">
+                                                        <option selected>Outdoor</option>
+                                                        <option>Black Tie</option>
+                                                        <option>Conference</option>
+                                                        <option>Concert</option>
+                                                        <option>Private</option>
+                                                        </select>
+                                                    </div><!--end form-group-->                                                    
+                                                   
+                                                    <!--Remember to do the datetime properly-->
+                                                    <div class='form-group col-md-3'>
+                                                        <label for="inputDate">Event Date</label>
+                                                        <div class='input-group date' id='datetimepicker1'>
+                                                            <input type='text' class="form-control" placeholder="DD/MM/YYYY">
+                                                            <span class="input-group-addon">
+                                                                <span class="glyphicon glyphicon-calendar"></span>
+                                                            </span>                                                            
+                                                        </div>
+                                                    </div>
+                                                </div><!--end form-row-->
+                                            </form><!--end form-->										
+                                    </div><!-- end modal-body -->
+                                    <div class="modal-footer">
+                                        <button class="btn btn-success pull-right" type="submit"><span class="glyphicon glyphicon-plus"></span> Add Event</button>
+                                        <button class="btn btn-danger pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>                                      
+                                    </div><!--end modal-footer-->
+								</div><!-- end modal-content -->
+							</div><!-- end modal-dialog -->
+						</div><!-- end myModal -->
+						
             <br>
 			<hr>
 			
@@ -222,11 +264,11 @@
 	<!-- Fall back jQuery in case online verion unavailable downloaded hardcoded by third-part -->
 	<script>window.jQuery || document.write('<script src="includes/js/jquery-1.8.2.min.js"><\/script>')</script>
 	
-	<!-- javascript files from bootstrap -->
-	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="../static/bootstrap/js/bootstrap.min.js"></script>
 	
-	<!-- customized javascript files from tutorials -->
-	<script src="includes/js/script.js"></script>
+	<!-- Custom JS -->
+	<script src="../static/includes/js/script.js"></script>
 	
 	</body>
 </html>
