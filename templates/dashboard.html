@@ -97,11 +97,11 @@
 								<ul class="dropdown-menu">
 									
 									<li>
-										<a href="/Users/Aleki/Desktop/BrightEvents/app/templates/editProfile.html"><span class="glyphicon glyphicon-refresh"></span> Update Profile</a>
+										<a href= {{ url_for('editProfile') }}><span class="glyphicon glyphicon-refresh"></span> Update Profile</a>
 									</li>
 														
 									<li>
-										<a href="/Users/Aleki/Desktop/BrightEvents/app/templates/editProfile.html"><span class="glyphicon glyphicon-cog"></span> Settings</a>
+										<a href={{ url_for('editProfile') }}><span class="glyphicon glyphicon-cog"></span> Settings</a>
 									</li>
 									
 									<li class="divider"></li>
@@ -123,7 +123,7 @@
 					<div class="well">
 				
 						<div class="page-header">
-							<h1>Welcome {% session ["username"] %},</h1>
+							<h1>Welcome {{ session['username'] }},</h1>
 						</div><!-- end page-header -->
 					
 						<div>
@@ -133,12 +133,12 @@
 						</div>
 						<br>
 						
-						<p style="padding-left: 180px"><span class="glyphicon glyphicon-user"></span><b> User Name:</b> SrMoffat</p> 
+						<p style="padding-left: 180px"><span class="glyphicon glyphicon-user"></span><b> User Name:</b> {{ session['username'] }}</p> 
 						<p style="padding-left: 180px"><span class="glyphicon glyphicon-briefcase"></span><b> My Events:</b> (0)</p>
 						<p style="padding-left: 180px"><span class="glyphicon glyphicon-file"></span><b> Current RSVPs: </b> (0)</p>
 						
-						<a href="/Users/Aleki/Desktop/BrightEvents/app/templates/editProfile.html" class="btn btn-small btn-primary" style="margin-left: 30px"><span class="glyphicon glyphicon-edit"></span> Edit Profile</a>
-						<a href="/Users/Aleki/Desktop/BrightEvents/app/templates/viewEvents.html" class="btn btn-small btn-default"> View My Events <span class="badge badge-dark">0</span></a>
+						<a href= {{ url_for('editProfile') }} class="btn btn-small btn-primary" style="margin-left: 30px"><span class="glyphicon glyphicon-edit"></span> Edit Profile</a>
+						<a href= {{ url_for('viewEvents') }} class="btn btn-small btn-default"> View My Events <span class="badge badge-dark">0</span></a>
 					
 					</div><!-- end well -->
                 </div><!--end container-->
@@ -165,17 +165,17 @@
                                                 <div class="form-row">
                                                     <div class="form-group col-md-3">
                                                         <label for="eventName">Event Name</label>
-                                                        <input type="text" class="form-control" id="eventName" placeholder="Event Name">
+                                                        <input name = "event" type="text" class="form-control" id="eventName" placeholder="Event Name">
                                                     </div><!--end form-group-->
                                             
                                                     <div class="form-group col-md-3">
                                                         <label for="eventLocation">Event Location</label>
-                                                        <input type="text" class="form-control" id="eventLocation" placeholder="Event Location">
+                                                        <input name= "location" type="text" class="form-control" id="eventLocation" placeholder="Event Location">
                                                     </div><!--end form-group-->
                                             
                                                     <div class="form-group col-md-3">
                                                         <label for="inputCategory">Event Category</label>
-                                                        <select id="inputCategory" class="form-control">
+                                                        <select name = "category" id="inputCategory" class="form-control">
                                                         <option selected>Outdoor</option>
                                                         <option>Black Tie</option>
                                                         <option>Conference</option>
@@ -188,7 +188,7 @@
                                                     <div class='form-group col-md-3'>
                                                         <label for="inputDate">Event Date</label>
                                                         <div class='input-group date' id='datetimepicker1'>
-                                                            <input type='text' class="form-control" placeholder="DD/MM/YYYY">
+                                                            <input name="date" type='text' class="form-control" placeholder="DD/MM/YYYY">
                                                             <span class="input-group-addon">
                                                                 <span class="glyphicon glyphicon-calendar"></span>
                                                             </span>                                                            

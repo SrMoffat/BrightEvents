@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, session
 import userClass
+import eventsClass
 import re
 
 
@@ -10,6 +11,7 @@ app.config['SECRET_KEY'] = "4fr0c0d3things"
 
 
 user_handler = userClass.UserManager()
+event_handler = eventsClass.EventsManager()
 
 
 def loginRequired():
@@ -71,17 +73,51 @@ def signin():
             session['username'] = request.form['username']
             global new_user
             new_user = username
-            return render_template('dashboard.html')
+            return redirect(url_for('dashboard'))
         return render_template('register.html')
     return render_template('signin.html')
 
 
-@app.route('/dashboard')
+@app.route('/dashboard', methods=["GET", "POST"])
 def dashboard():
     if loginRequired() == "fail":
-        return redirect("signin.html")
+        return redirect(url_for("signin"))
     else:
-        return render_template('dashboard.html')
+        if new_user == session['username']:
+            user_events = event_handler.return_events()
+    return render_template('viewEvents.html' , user_events=user_events)
+
+@app.route('/dashboard/add-event', methods=["GET", "POST"])
+def add_event():
+    if loginRequired() == "fail":
+        return redirect(url_for("signin"))
+    else:
+        if request.method == "POST":
+            event = request.form['event']
+            category = request.form['category']
+            location = request.form['location']
+            date = request.form['date']
+            owner = session ['username']
+
+            event_submit = event_handler.createEvent(
+                event,
+                location,
+                category,
+                date,
+                owner)
+
+            if event_submit == "event_created":
+                return render_template("dashboard.html")
+
+          
+
+            #if event_submit:
+             #   return render_template('dashboard.html', events=event_submit)
+
+    #return render_template('viewEvents.html', user_events=user_events)
+
+        
+        
 
 
 @app.route('/editProfile')

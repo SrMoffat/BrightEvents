@@ -81,11 +81,11 @@
 								<ul class="dropdown-menu">
 									
 									<li>
-										<a href="/Users/Aleki/Desktop/BrightEvents/app/templates/editProfile.html"><span class="glyphicon glyphicon-refresh"></span> Update Profile</a>
+										<a href= {{ url_for('editProfile') }} ><span class="glyphicon glyphicon-refresh"></span> Update Profile</a>
 									</li>
 														
 									<li>
-										<a href="/Users/Aleki/Desktop/BrightEvents/app/templates/editProfile.html"><span class="glyphicon glyphicon-cog"></span> Settings</a>
+										<a href= {{ url_for('editProfile') }}><span class="glyphicon glyphicon-cog"></span> Settings</a>
 									</li>
 									
 									<li class="divider"></li>
@@ -107,7 +107,7 @@
 					<div class="well">
 				
 						<div class="page-header">
-							<h1>Welcome SrMoffat,</h1>
+							<h1>Welcome {{ session['username'] }},</h1>
 						</div><!-- end page-header -->
 					
 						<div>
@@ -117,12 +117,12 @@
 						</div>
 						<br>
 						
-						<p style="padding-left: 180px"><span class="glyphicon glyphicon-user"></span><b> User Name:</b> SrMoffat</p> 
+						<p style="padding-left: 180px"><span class="glyphicon glyphicon-user"></span><b> User Name:</b> {{ session['username'] }}</p> 
 						<p style="padding-left: 180px"><span class="glyphicon glyphicon-briefcase"></span><b> My Events:</b> (0)</p>
 						<p style="padding-left: 180px"><span class="glyphicon glyphicon-file"></span><b> Current RSVPs: </b> (0)</p>
 						
-						<a href="/Users/Aleki/Desktop/BrightEvents/app/templates/editProfile.html" class="btn btn-small btn-primary" style="margin-left: 30px"><span class="glyphicon glyphicon-edit"></span> Edit Profile</a>
-						<a href="/Users/Aleki/Desktop/BrightEvents/app/templates/dashboard.html" class="btn btn-small btn-default"><span class = "glyphicon glyphicon-home"> Dashboard </span></a>
+						<a href= {{ url_for('editProfile') }}  class="btn btn-small btn-primary" style="margin-left: 30px"><span class="glyphicon glyphicon-edit"></span> Edit Profile</a>
+						<a href= {{ url_for('dashboard') }} class="btn btn-small btn-default"><span class = "glyphicon glyphicon-home"> Dashboard </span></a>
 					
 					</div><!-- end well -->
                 </div><!--end container-->
@@ -137,12 +137,17 @@
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
                                           <h4 class="panel-title">
-                                            <p data-toggle="collapse" href="#collapse1"><b>SrMoffat's Events</b> <small style="font-size: 9pt"> Click to View</small></p>
+                                            <p data-toggle="collapse" href="#collapse1"><b>{{ session['username'] }}'s Events</b> <small style="font-size: 9pt"> Click to View</small></p>
                                           </h4>
                                         </div>
                                         <div id="collapse1" class="panel-collapse collapse">
                                             <div class="list-group" id="listGroup">
-
+                                                {% if user_events == None %}
+                                                    <a href="#1" class="list-group-item list-group-item-action">
+                                                        <h4 class="list-group-item-heading"> <b>No Events Yet</b></h4>                                                                                                               
+                                                    </a>
+                                                {% else %}
+                                                {% for event in user_events %}
                                                     <a href="#1" class="list-group-item list-group-item-action">
                                                         <h4 class="list-group-item-heading"> <b>forLoop</b></h4>
                                                         <p class="list-group-item-text"><b>Category : </b> Conference</p>
@@ -150,8 +155,10 @@
                                                         <p class="list-group-item-text"><b>Location: </b> Nairobi</p>
                                                         <p class="list-group-item-text"><b>RSVPs: </b> (1200)</p>                                                        
                                                     </a>
+                                                {% endfor %}
+                                                {% endif %}
 
-                                                    <a href="#2" class="list-group-item list-group-item-action">
+                                                    <!--<a href="#2" class="list-group-item list-group-item-action">
                                                         <h4 class="list-group-item-heading"> <b>Dunda Fest</b></h4>
                                                         <p class="list-group-item-text"><b>Category : </b> Outdoor</p>
                                                         <p class="list-group-item-text"><b>Date: </b> 22/02/2018</p>
@@ -173,7 +180,7 @@
                                                         <p class="list-group-item-text"><b>Date: </b> 22/02/2018</p>
                                                         <p class="list-group-item-text"><b>Location: </b> Nairobi</p>
                                                         <p class="list-group-item-text"><b>RSVPs: </b> (12)</p>                                                        
-                                                    </a>
+                                                    </a>-->
                                             </div>
                                             
                                             <div class="container panel-footer">
